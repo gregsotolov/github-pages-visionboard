@@ -24,6 +24,24 @@
             transform: translateY(-10px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
+        #introduction {
+            position: relative;
+            overflow: hidden;
+        }
+        #introduction::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1754215683705-ee0a731d7288?q=80&w=2175&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px) brightness(0.85);
+            transform: scale(1.1);
+            z-index: -1;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -71,10 +89,12 @@
             <!-- Introduction Section -->
             <section id="introduction" class="min-h-screen flex items-center">
                 <div class="container mx-auto px-6 text-center relative z-10">
-                    <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-4">Crafting My Ideal Future</h1>
-                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                        This is my vision board, a dedicated space to bring my dreams to life. It serves as a daily reminder of my goals and aspirations across all facets of my life. By visualizing the future I want, I am taking the first step toward making it a reality.
-                    </p>
+                    <div class="bg-white/50 backdrop-blur-sm rounded-xl p-8 md:p-12 inline-block">
+                        <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-4">Crafting My Ideal Future</h1>
+                        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+                            This is my vision board, a dedicated space to bring my dreams to life. It serves as a daily reminder of my goals and aspirations across all facets of my life. By visualizing the future I want, I am taking the first step toward making it a reality.
+                        </p>
+                    </div>
                 </div>
             </section>
 
@@ -247,4 +267,7 @@
     </script>
 </body>
 </html>
+
+
+
 
