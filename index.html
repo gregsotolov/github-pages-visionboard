@@ -123,7 +123,7 @@
                             </div>
                         </div>
                         <div class="vision-card bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1511671782779-c97d-3d27a1d4?q=80&w=2070&auto=format&fit=crop" alt="Jazz records" class="w-full h-56 object-cover">
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop" alt="Jazz records" class="w-full h-56 object-cover">
                             <div class="p-6">
                                 <h3 class="text-2xl font-bold mb-2">Jazz Is Dead</h3>
                                 <p class="text-gray-600">Lead the prototype development. Flex your game design and programming skills.</p>
@@ -322,6 +322,10 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Initial Setup ---
+            // Disable scrolling while password/splash is active
+            document.documentElement.classList.add('overflow-hidden');
+
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -345,7 +349,7 @@
             const passwordError = document.getElementById('password-error');
             const splash = document.getElementById('splash-screen');
             const main = document.getElementById('main-content');
-            
+
             const correctPasscode = 'VjFzaW9uYm9hcmQh';
 
             passwordForm.addEventListener('submit', (event) => {
@@ -368,6 +372,8 @@
 
                             setTimeout(() => {
                                 splash.style.display = 'none';
+                                // Re-enable scrolling now that the main content is visible
+                                document.documentElement.classList.remove('overflow-hidden');
                             }, 1000); 
                         }, 2500); 
 
@@ -386,5 +392,6 @@
     </script>
 </body>
 </html>
+
 
 
