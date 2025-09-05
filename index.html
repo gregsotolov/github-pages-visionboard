@@ -123,7 +123,7 @@
                             </div>
                         </div>
                         <div class="vision-card bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop" alt="Jazz records" class="w-full h-56 object-cover">
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d-3d27a1d4?q=80&w=2070&auto=format&fit=crop" alt="Jazz records" class="w-full h-56 object-cover">
                             <div class="p-6">
                                 <h3 class="text-2xl font-bold mb-2">Jazz Is Dead</h3>
                                 <p class="text-gray-600">Lead the prototype development. Flex your game design and programming skills.</p>
@@ -190,7 +190,7 @@
                     <h2 class="text-4xl font-bold text-center mb-12">Relationships & Connections</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="vision-card bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1621112904887-419379ce6824?q=80&w=2070&auto=format=fit=crop" alt="A group of friends laughing together" class="w-full h-56 object-cover">
+                            <img src="https://images.unsplash.com/photo-1621112904887-419379ce6824?q=80&w=2070&auto=format&fit=crop" alt="A group of friends laughing together" class="w-full h-56 object-cover">
                             <div class="p-6">
                                 <h3 class="text-2xl font-bold mb-2">Close Friends</h3>
                                 <p class="text-gray-600">Spend more time with close friends, less with ancillary ones.</p>
@@ -338,19 +338,22 @@
                 });
             });
 
-            // Password Protection Logic
+            // --- Password Protection Logic ---
             const passwordScreen = document.getElementById('password-screen');
             const passwordForm = document.getElementById('password-form');
             const passwordInput = document.getElementById('password-input');
             const passwordError = document.getElementById('password-error');
-            
             const splash = document.getElementById('splash-screen');
             const main = document.getElementById('main-content');
+            
+            const correctPasscode = 'VjFzaW9uYm9hcmQh';
 
             passwordForm.addEventListener('submit', (event) => {
                 event.preventDefault();
+                // Encode the user's input for comparison
+                const enteredPasscode = btoa(passwordInput.value.trim());
                 
-                if (passwordInput.value === 'V1sionboard') {
+                if (enteredPasscode === correctPasscode) {
                     // Correct password
                     passwordScreen.classList.add('opacity-0');
                     setTimeout(() => {
