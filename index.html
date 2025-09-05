@@ -24,24 +24,6 @@
             transform: translateY(-10px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
-        #introduction {
-            position: relative;
-            overflow: hidden;
-        }
-        #introduction::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('https://images.unsplash.com/photo-1754901350480-c0fdd1a427b4?q=80&w=2175&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            filter: blur(4px) brightness(0.85);
-            transform: scale(1.1);
-            z-index: -1;
-        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -99,7 +81,8 @@
 
         <main>
             <!-- Introduction Section -->
-            <section id="introduction" class="min-h-screen flex items-center">
+            <section id="introduction" class="min-h-screen flex items-center relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1754901350480-c0fdd1a427b4?q=80&w=2175&auto=format&fit=crop" alt="Misty mountain landscape background" class="absolute inset-0 w-full h-full object-cover transform scale-110 filter blur-sm brightness-90 -z-10">
                 <div class="container mx-auto px-6 text-center relative z-10">
                     <div class="bg-white/50 backdrop-blur-sm rounded-xl p-8 md:p-12 inline-block">
                         <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-4">Crafting My Ideal Future</h1>
@@ -392,6 +375,7 @@
     </script>
 </body>
 </html>
+
 
 
 
