@@ -87,8 +87,8 @@
                 <img src="https://images.unsplash.com/photo-1754901350480-c0fdd1a427b4?q=80&w=2070&auto=format=fit=crop" alt="Misty mountain landscape background" class="absolute inset-0 w-full h-full object-cover transform scale-110 filter blur-sm brightness-90">
                 <div class="container mx-auto px-6 text-center relative z-10">
                     <div class="bg-white/50 backdrop-blur-sm rounded-xl p-8 md:p-12 inline-block">
-                        <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-4">Creating My Ideal Future</h1>
-                        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+                        <h1 id="intro-title" class="text-5xl md:text-7xl font-bold text-gray-900 mb-4">Creating My Ideal Future</h1>
+                        <p id="intro-description" class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
                             This is my vision board, a dedicated space to bring my dreams to life. It serves as a daily reminder of my goals and aspirations across all facets of my life. By visualizing the future I want, I am taking the first step toward making it a reality.
                         </p>
                     </div>
@@ -367,6 +367,35 @@
             // Disable scrolling while password/splash is active
             document.documentElement.classList.add('overflow-hidden');
 
+            // --- Random Introduction Text ---
+            const introTexts = [
+                {
+                    title: "Visualize Your Dreams",
+                    description: "This is a dedicated space to bring my dreams to life. It serves as a daily reminder of my goals and aspirations across all facets of my life. By visualizing the future I want, I am taking the first step toward making it a reality."
+                },
+                {
+                    title: "Every Day Is A New Beginning",
+                    description: "In the pursuit of my dreams, I am primarily focused on modest victories I can achieve daily, as I know that accumulation of these victories will lead to achieving my ultimate goals."
+                },
+                {
+                    title: "Progress, Not Perfection",
+                    description: "Perfection exists only in your mind. Expectation of perfection is an impossibilty. Success is measured by effort, when it comes to manifestation. The only way to fail is to not try."
+                },
+                {
+                    title: "My Dreams Are Worth It",
+                    description: "Gratification, freedom, and serenity are secured by decisions you make in the past. Focus on the outcomes with the longest lasting benefits. Every day you will have something to be grateful for because your past self prepared and worked hard to make your dream life a reality."
+                },
+                {
+                    title: "One Step At A Time",
+                    description: "Action produces information, which leads to you making better decisions tomorrow. Not acting will result in nothing. Try anything and everything, if necessary. There is no wrong direction, the only direction that truly exists is forwards."
+                }
+            ];
+
+            const randomIntro = introTexts[Math.floor(Math.random() * introTexts.length)];
+            document.getElementById('intro-title').textContent = randomIntro.title;
+            document.getElementById('intro-description').textContent = randomIntro.description;
+
+
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -433,4 +462,5 @@
     </script>
 </body>
 </html>
+
 
